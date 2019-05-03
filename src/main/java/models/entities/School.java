@@ -3,9 +3,12 @@ package models.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.List;
 
-public class School {
+@Entity
+@Table(name="SCHOOL")
+public class School implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

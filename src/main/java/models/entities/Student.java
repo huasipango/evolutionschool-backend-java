@@ -1,12 +1,12 @@
 package models.entities;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-public class Student extends User {
+@Entity
+@Table(name="STUDENT")
+public class Student extends User implements Serializable {
 
     @JoinColumn(name = "FATID", referencedColumnName = "USEID")
     @ManyToOne

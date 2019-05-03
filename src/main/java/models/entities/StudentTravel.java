@@ -1,8 +1,11 @@
 package models.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-public class StudentTravel {
+@Entity
+@Table(name="STUDENTTRAVEL")
+public class StudentTravel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

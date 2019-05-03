@@ -5,9 +5,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Absense {
+@Entity
+@Table(name="ABSENSE")
+public class Absense implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

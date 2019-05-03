@@ -1,13 +1,14 @@
 package models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.List;
 
-public class Driver extends User {
+@Entity
+@Table(name="DRIVER")
+public class Driver extends User implements Serializable {
 
     @Size(max = 300)
     @Column(name = "DRILICENSEPHOTO")

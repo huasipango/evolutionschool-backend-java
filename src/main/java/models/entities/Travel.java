@@ -3,11 +3,14 @@ package models.entities;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Calendar;
 import java.util.List;
 
-public class Travel {
+@Entity
+@Table(name="TRAVEL")
+public class Travel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

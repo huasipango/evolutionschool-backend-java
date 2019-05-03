@@ -1,8 +1,11 @@
 package models.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-public class UserRole {
+@Entity
+@Table(name="USERROLE")
+public class UserRole implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
