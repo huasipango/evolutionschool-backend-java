@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Calendar;
+import java.util.List;
 
 public class Travel {
 
@@ -22,5 +23,45 @@ public class Travel {
     @Temporal(TemporalType.TIME)
     private Time traEndTime;
 
+    @OneToMany(mappedBy = "strTravel", fetch = FetchType.LAZY)
+    private List<StudentTravel> traStudentTravels;
 
+    public Travel() {
+    }
+
+    public Travel(Integer traId) {
+        this.traId = traId;
+    }
+
+    public Integer getTraId() {
+        return traId;
+    }
+
+    public void setTraId(Integer traId) {
+        this.traId = traId;
+    }
+
+    public Time getTraStartTime() {
+        return traStartTime;
+    }
+
+    public void setTraStartTime(Time traStartTime) {
+        this.traStartTime = traStartTime;
+    }
+
+    public Time getTraEndTime() {
+        return traEndTime;
+    }
+
+    public void setTraEndTime(Time traEndTime) {
+        this.traEndTime = traEndTime;
+    }
+
+    public List<StudentTravel> getTraStudentTravels() {
+        return traStudentTravels;
+    }
+
+    public void setTraStudentTravels(List<StudentTravel> traStudentTravels) {
+        this.traStudentTravels = traStudentTravels;
+    }
 }

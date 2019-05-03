@@ -38,4 +38,71 @@ public class Car {
     @Size(max = 300)
     @Column(name = "CARAVATAR")
     private String carAvatar;
+
+    @JoinColumn(name = "DRIID", referencedColumnName = "DRIID")
+    @ManyToOne
+    private Driver carDriver;
+
+    public Car() {
+    }
+
+    public Car(Integer carId) {
+        this.carId = carId;
+    }
+
+    public Integer getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Integer carId) {
+        this.carId = carId;
+    }
+
+    public String getCarLicensePlate() {
+        return carLicensePlate;
+    }
+
+    public void setCarLicensePlate(String carLicensePlate) {
+        this.carLicensePlate = carLicensePlate;
+    }
+
+    public Integer getCarYear() {
+        return carYear;
+    }
+
+    public void setCarYear(Integer carYear) {
+        this.carYear = carYear;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public String getCarAvatar() {
+        return carAvatar;
+    }
+
+    public void setCarAvatar(String carAvatar) {
+        this.carAvatar = carAvatar;
+    }
+
+    public Driver getCarDriver() {
+        return carDriver;
+    }
+
+    public void setCarDriver(Driver carDriver) {
+        this.carDriver = carDriver;
+    }
 }
