@@ -53,7 +53,7 @@ public class RouteController {
         return "route/form";
     }
 
-    @GetMapping(value="/delete" )
+    @GetMapping(value="/delete/{id}" )
     public String delete(@PathVariable(value = "id") Integer id,
                          Model model){
         try{
